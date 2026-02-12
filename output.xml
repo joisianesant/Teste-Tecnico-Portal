@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.9.6 on darwin)" generated="2026-02-12T14:49:47.485079" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="/Users/joisianesantos/Documents/pcpdev-teste-tecnico/tests">
+<suite id="s1-s1" name="Filtros Pesquisa" source="/Users/joisianesantos/Documents/pcpdev-teste-tecnico/tests/filtros_pesquisa.robot">
+<kw name="Abrir site PCPDev" owner="keywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-02-12T14:49:47.684349" level="INFO">Opening browser 'chrome' to base url 'https://www.pcpdev.com.br'.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-02-12T14:49:47.684139" elapsed="3.460836"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-02-12T14:49:51.146120" elapsed="4.691441"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//body</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-12T14:49:55.838845" elapsed="0.034763"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-12T14:49:56.875462" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-12T14:49:55.873884" elapsed="1.001795"/>
+</kw>
+<doc>Abre o site no Chrome e maximiza a janela</doc>
+<status status="PASS" start="2026-02-12T14:49:47.683443" elapsed="9.192455"/>
+</kw>
+<test id="s1-s1-t1" name="CT-001 Buscar por termo no campo Objeto" line="8">
+<kw name="Preencher campo Objeto" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CAMPO_OBJETO}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-12T14:49:56.877680" elapsed="0.018344"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${CAMPO_OBJETO}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-02-12T14:49:56.896268" elapsed="0.289557"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${CAMPO_OBJETO}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-12T14:49:57.186318" elapsed="0.047687"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-12T14:49:57.234595" level="INFO">Typing text 'Licitação' into text field 'xpath=//*[@id="objeto"]'.</msg>
+<arg>${CAMPO_OBJETO}</arg>
+<arg>${texto}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-12T14:49:57.234250" elapsed="0.231424"/>
+</kw>
+<arg>Licitação</arg>
+<status status="PASS" start="2026-02-12T14:49:56.877141" elapsed="0.588789"/>
+</kw>
+<kw name="Clicar em Buscar" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BOTAO_BUSCAR}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-12T14:49:57.467141" elapsed="0.023185"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${BOTAO_BUSCAR}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-02-12T14:49:57.490569" elapsed="0.270217"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-12T14:49:57.761273" level="INFO">Clicking element 'xpath=//*[@id="pesquisa-p"]/a[1]'.</msg>
+<arg>${BOTAO_BUSCAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-12T14:49:57.760994" elapsed="1.108507"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-12T14:50:00.872167" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-12T14:49:58.869930" elapsed="2.004566"/>
+</kw>
+<status status="PASS" start="2026-02-12T14:49:57.466686" elapsed="3.409114"/>
+</kw>
+<kw name="Validar retorno da pesquisa" owner="keywords">
+<kw name="Wait Until Page Does Not Contain" owner="SeleniumLibrary">
+<arg>Buscando</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` disappears from the current page.</doc>
+<status status="PASS" start="2026-02-12T14:50:00.883469" elapsed="0.059999"/>
+</kw>
+<status status="PASS" start="2026-02-12T14:50:00.881777" elapsed="0.062442"/>
+</kw>
+<tag>Gherkin</tag>
+<status status="PASS" start="2026-02-12T14:49:56.876104" elapsed="4.070275"/>
+</test>
+<test id="s1-s1-t2" name="CT-002 Buscar por número do processo" line="14">
+<kw name="Preencher campo Processo" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CAMPO_PROCESSO}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-12T14:50:00.956796" elapsed="0.054569"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${CAMPO_PROCESSO}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-02-12T14:50:01.012109" elapsed="0.289978"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${CAMPO_PROCESSO}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-12T14:50:01.302814" elapsed="0.037944"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-12T14:50:01.341351" level="INFO">Typing text '123456' into text field 'xpath=//*[@id="processo"]'.</msg>
+<arg>${CAMPO_PROCESSO}</arg>
+<arg>${numero}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-12T14:50:01.340989" elapsed="0.124914"/>
+</kw>
+<arg>123456</arg>
+<status status="PASS" start="2026-02-12T14:50:00.956119" elapsed="0.512033"/>
+</kw>
+<kw name="Clicar em Buscar" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BOTAO_BUSCAR}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-12T14:50:01.472092" elapsed="0.015484"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${BOTAO_BUSCAR}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-02-12T14:50:01.487792" elapsed="0.268983"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-12T14:50:01.757883" level="INFO">Clicking element 'xpath=//*[@id="pesquisa-p"]/a[1]'.</msg>
+<arg>${BOTAO_BUSCAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-12T14:50:01.757255" elapsed="0.991146"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-12T14:50:04.751366" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-12T14:50:02.748691" elapsed="2.002977"/>
+</kw>
+<status status="PASS" start="2026-02-12T14:50:01.470623" elapsed="3.281285"/>
+</kw>
+<kw name="Validar retorno da pesquisa" owner="keywords">
+<kw name="Wait Until Page Does Not Contain" owner="SeleniumLibrary">
+<arg>Buscando</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` disappears from the current page.</doc>
+<status status="PASS" start="2026-02-12T14:50:04.752983" elapsed="0.025709"/>
+</kw>
+<status status="PASS" start="2026-02-12T14:50:04.752406" elapsed="0.026447"/>
+</kw>
+<tag>Gherkin</tag>
+<status status="PASS" start="2026-02-12T14:50:00.949551" elapsed="3.829552"/>
+</test>
+<test id="s1-s1-t3" name="CT-003 Buscar por nome do órgão comprador" line="20">
+<kw name="Preencher campo Órgão" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CAMPO_ORGAO}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-12T14:50:04.780370" elapsed="0.014766"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${CAMPO_ORGAO}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-02-12T14:50:04.795334" elapsed="0.267230"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${CAMPO_ORGAO}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-12T14:50:05.063515" elapsed="0.030381"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-12T14:50:05.094513" level="INFO">Typing text 'Prefeitura' into text field 'xpath=//*[@id="orgao"]'.</msg>
+<arg>${CAMPO_ORGAO}</arg>
+<arg>${orgao}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-12T14:50:05.094142" elapsed="0.085606"/>
+</kw>
+<arg>Prefeitura</arg>
+<status status="PASS" start="2026-02-12T14:50:04.780007" elapsed="0.399877"/>
+</kw>
+<kw name="Clicar em Buscar" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BOTAO_BUSCAR}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-12T14:50:05.181062" elapsed="0.014777"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${BOTAO_BUSCAR}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-02-12T14:50:05.196338" elapsed="0.282675"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-12T14:50:05.479520" level="INFO">Clicking element 'xpath=//*[@id="pesquisa-p"]/a[1]'.</msg>
+<arg>${BOTAO_BUSCAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-12T14:50:05.479237" elapsed="0.889499"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-12T14:50:08.372133" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-12T14:50:06.369094" elapsed="2.004424"/>
+</kw>
+<status status="PASS" start="2026-02-12T14:50:05.180287" elapsed="3.194115"/>
+</kw>
+<kw name="Validar retorno da pesquisa" owner="keywords">
+<kw name="Wait Until Page Does Not Contain" owner="SeleniumLibrary">
+<arg>Buscando</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` disappears from the current page.</doc>
+<status status="PASS" start="2026-02-12T14:50:08.376615" elapsed="0.025576"/>
+</kw>
+<status status="PASS" start="2026-02-12T14:50:08.375666" elapsed="0.026688"/>
+</kw>
+<tag>Gherkin</tag>
+<status status="PASS" start="2026-02-12T14:50:04.779415" elapsed="3.623298"/>
+</test>
+<kw name="Fechar Navegador" owner="keywords" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-02-12T14:50:08.404204" elapsed="0.228690"/>
+</kw>
+<status status="PASS" start="2026-02-12T14:50:08.403698" elapsed="0.229611"/>
+</kw>
+<status status="PASS" start="2026-02-12T14:49:47.515152" elapsed="21.118288"/>
+</suite>
+<status status="PASS" start="2026-02-12T14:49:47.486506" elapsed="21.148480"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="3" fail="0" skip="0">Gherkin</stat>
+</tag>
+<suite>
+<stat name="Tests" id="s1" pass="3" fail="0" skip="0">Tests</stat>
+<stat name="Filtros Pesquisa" id="s1-s1" pass="3" fail="0" skip="0">Tests.Filtros Pesquisa</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
