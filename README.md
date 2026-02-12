@@ -19,7 +19,6 @@ Os cenários foram levantados a partir da interface do portal e priorizam situa�
 ## 🧠 Tecnologias Utilizadas
 
 - Robot Framework  
-- Python  
 - SeleniumLibrary  
 - Escrita de cenários em Gherkin (BDD)  
 - VS Code  
@@ -28,3 +27,4 @@ Os cenários foram levantados a partir da interface do portal e priorizam situa�
 ## 👩‍💻 Autora
 
 Projeto desenvolvido por **Joisiane Santos**
+
