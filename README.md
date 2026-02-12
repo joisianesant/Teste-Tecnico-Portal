@@ -14,7 +14,8 @@ Os cenários foram levantados a partir da interface do portal e priorizam situa�
 - utilização de filtros
 - validação de resultados retornados
 
-
+**Observações:**  
+O documento _Report de Testes Pesquisa de Processos PCPDev.pdf_ contém a descrição dos testes manuais e automatizados realizados, bem como alguns pontos de melhoria identificados durante a execução.
 
 ## 🧠 Tecnologias Utilizadas
 
@@ -27,4 +28,5 @@ Os cenários foram levantados a partir da interface do portal e priorizam situa�
 ## 👩‍💻 Autora
 
 Projeto desenvolvido por **Joisiane Santos**
+
 
